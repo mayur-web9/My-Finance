@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import useStore from '../store';
 
 const Settings = () => {
   const [username, setUsername] = useState('Mayur');
   const [email, setEmail] = useState('mayur.patil.ac@gmail.com');
   const [password, setPassword] = useState('');
   const [expenseLimit, setExpenseLimit] = useState(1000);
-  const [theme, setTheme] = useState('light');
+  const theme = useStore((state) => state.theme);
+  const setTheme = useStore((state) => state.setTheme);
+  const navigate = useNavigate();
 
   const handleSave = () => {
     // Handle save logic here
@@ -14,7 +18,7 @@ const Settings = () => {
 
   return (
     <div className='container mx-auto p-4'>
-       <div className='flex justify-around items-start mt-auto'>
+      <div className='flex justify-around items-start mt-auto'>
         <button
           onClick={() => navigate('/')}
           className='px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300'

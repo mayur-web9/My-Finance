@@ -5,6 +5,7 @@ import Chart from "./components/chart";
 import DoughnutChart from "./components/doughnutchart";
 import Transactions from "./components/transactions";
 import Accounts from "./components/accounts";
+import NewLogin from "./components/NewLogin";
 import useStore from "./store";
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
 
         <div className='px-0 md:px-5 2xl:px-20'>
           <Info
-            title='Dashboard'
+            title='Financial Overview'
             subTitle='Monitor your financial activities'
           />
           <Stats />
